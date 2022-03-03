@@ -4,17 +4,30 @@
   <pageMap>
     <page path="/ERPSolAMSMain.jsf" usageId="erpsolams_erpsolamsview_ERPSolAMSMainPageDef"/>
     <page path="/SYS_003.jsf" usageId="erpsolams_erpsolamsview_SYS_003PageDef"/>
+    <page path="/WEB-INF/ERPSOLAMSBTF.xml#ERPSOLAMSBTF@ExeWithParaAMSSSetup"
+          usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/ERPSOLAMSBTF.xml#ERPSOLAMSBTF@ExeWithParaAMSSTransaction"
+          usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolams_erpsolamsview_ERPSolAMSMainPageDef"
           path="erpsolams.erpsolamsview.pageDefs.ERPSolAMSMainPageDef"/>
     <page id="erpsolams_erpsolamsview_SYS_003PageDef" path="erpsolams.erpsolamsview.pageDefs.SYS_003PageDef"/>
+    <page id="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef"
+          path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef"/>
+    <page id="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef1"
+          path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolAMSAppModuleDataControl" Package="erpsolams.erpsolamsmodel.erpsolamsam"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="ERPSolAMSAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ERPSolTempAppModuleDataControl" Package="erpsoltemp.erpsoltempmodel.erpsoltempam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolTempAppModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

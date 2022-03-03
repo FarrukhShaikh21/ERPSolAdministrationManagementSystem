@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="ERPSOLAMSBTF">
+    <default-activity>doERPSolAMSSessionGlobals</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>ERPSolAMSPageFlowBean</managed-bean-name>
+      <managed-bean-class>erpsolams.erpsolamsview.erpsolamsclass.ERPSolAMSBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <view id="ERPSolAMSMain">
+      <page>/ERPSolAMSMain.jsf</page>
+    </view>
+    <method-call id="doERPSolAMSSessionGlobals">
+      <method>#{pageFlowScope.ERPSolAMSPageFlowBean.doSetERPSolAMSSessionGlobals}</method>
+    </method-call>
+    <method-call id="ExeWithParaAMSSSetup">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeWithParaAMSSTransaction">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>doERPSolAMSSessionGlobals</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
+        <to-activity-id>ExeWithParaAMSSSetup</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>ExeWithParaAMSSSetup</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
+        <to-activity-id>ExeWithParaAMSSTransaction</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
   </task-flow-definition>
 </adfc-config>

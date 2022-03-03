@@ -2,4 +2,97 @@
 <SDM>
    <OverallProperties
       id="OverallProperties1"/>
+   <TaskFlowReturn
+      id="TaskFlowReturn2">
+      <property
+         name="activityId">taskFlowReturn1</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">63.948242</property>
+      <property
+         name="x">495.0</property>
+   </TaskFlowReturn>
+   <View
+      id="View3">
+      <property
+         name="activityId">ERPSolAMSMain</property>
+      <property
+         name="page">/ERPSolAMSMain.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ERPSolAMSMain&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">234.79883</property>
+      <property
+         name="x">503.01562</property>
+   </View>
+   <MethodCall
+      id="MethodCall4">
+      <property
+         name="activityId">doERPSolAMSSessionGlobals</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doERPSolAMSSessionGlobals&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">352.44238</property>
+      <property
+         name="x">97.0</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="MethodCall4"
+      to="MethodCall6">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,138.0,352.0918,301.35156,351.74707,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall6">
+      <property
+         name="activityId">ExeWithParaAMSSSetup</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeWithParaAMSSSetup&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">352.09766</property>
+      <property
+         name="x">342.35156</property>
+   </MethodCall>
+   <MethodCall
+      id="MethodCall7">
+      <property
+         name="activityId">ExeWithParaAMSSTransaction</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeWithParaAMSSTransaction&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">350.74707</property>
+      <property
+         name="x">553.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="MethodCall6"
+      to="MethodCall7">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,383.35156,351.74707,512.35156,350.39648,L50</property>
+   </ControlFlowCase>
 </SDM>
