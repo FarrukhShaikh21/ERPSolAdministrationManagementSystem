@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="erpsolams.erpsolamsview" ClientType="Generic">
   <pageMap>
     <page path="/ERPSolAMSMain.jsf" usageId="erpsolams_erpsolamsview_ERPSolAMSMainPageDef"/>
+    <page path="/SYS_003.jsf" usageId="erpsolams_erpsolamsview_SYS_003PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolams_erpsolamsview_ERPSolAMSMainPageDef"
           path="erpsolams.erpsolamsview.pageDefs.ERPSolAMSMainPageDef"/>
+    <page id="erpsolams_erpsolamsview_SYS_003PageDef" path="erpsolams.erpsolamsview.pageDefs.SYS_003PageDef"/>
   </pageDefinitionUsages>
 </Application>
