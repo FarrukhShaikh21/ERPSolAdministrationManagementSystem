@@ -30,6 +30,12 @@
     <method-call id="ExeWithParaAMSSTransaction">
       <method>#{bindings.ExecuteWithParams.execute}</method>
       <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeWithParaAMSSReports">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
         <fixed-outcome>ExecuteWithParams</fixed-outcome>
       </outcome>
     </method-call>
@@ -45,6 +51,13 @@
       <control-flow-case id="__5">
         <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
         <to-activity-id>ExeWithParaAMSSTransaction</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>ExeWithParaAMSSTransaction</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
+        <to-activity-id>ExeWithParaAMSSReports</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

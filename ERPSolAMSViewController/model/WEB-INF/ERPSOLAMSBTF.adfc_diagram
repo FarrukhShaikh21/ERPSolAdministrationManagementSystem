@@ -95,4 +95,27 @@
       <property
          name="sdm:polyPoints">R50,383.35156,351.74707,512.35156,350.39648,L50</property>
    </ControlFlowCase>
+   <MethodCall
+      id="MethodCall9">
+      <property
+         name="activityId">ExeWithParaAMSSReports</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeWithParaAMSSReports&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">352.74707</property>
+      <property
+         name="x">829.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="MethodCall7"
+      to="MethodCall9">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
+      <property
+         name="sdm:polyPoints">R50,594.35156,350.39648,788.35156,352.39648,L50</property>
+   </ControlFlowCase>
 </SDM>
