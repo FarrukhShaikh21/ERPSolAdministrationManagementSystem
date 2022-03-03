@@ -68,7 +68,8 @@
                                                   required="#{bindings.SysUsersCRUD.hints.Password.mandatory}"
                                                   columns="#{bindings.SysUsersCRUD.hints.Password.displayWidth}"
                                                   maximumLength="#{bindings.SysUsersCRUD.hints.Password.precision}"
-                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Password.tooltip}" id="it3">
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Password.tooltip}" id="it3"
+                                                  secret="true">
                                         <f:validator binding="#{row.bindings.Password.validator}"/>
                                     </af:inputText>
                                 </af:column>
