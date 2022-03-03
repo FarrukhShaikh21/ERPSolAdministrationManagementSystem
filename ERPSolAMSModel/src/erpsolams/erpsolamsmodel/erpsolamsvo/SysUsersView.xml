@@ -13,6 +13,29 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllCompanyView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllCompanyView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovCompanyid"
+    ListVOName="AccAllCompanyView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Companyid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CompanyCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CompanyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SysUsers"
     Entity="erpsolams.erpsolamsmodel.erpsolamseo.SysUsers"/>
@@ -21,7 +44,15 @@
     PrecisionRule="true"
     EntityAttrName="Companyid"
     EntityUsage="SysUsers"
-    AliasName="COMPANYID"/>
+    AliasName="COMPANYID"
+    LOVName="LovCompanyid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Userid"
     IsNotNull="true"

@@ -10,4 +10,11 @@
           path="erpsolams.erpsolamsview.pageDefs.ERPSolAMSMainPageDef"/>
     <page id="erpsolams_erpsolamsview_SYS_003PageDef" path="erpsolams.erpsolamsview.pageDefs.SYS_003PageDef"/>
   </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="ERPSolAMSAppModuleDataControl" Package="erpsolams.erpsolamsmodel.erpsolamsam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolAMSAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
 </Application>

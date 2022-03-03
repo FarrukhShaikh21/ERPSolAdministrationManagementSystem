@@ -2,9 +2,115 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="SYS_003.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
-                <f:facet name="erptempmain"/>
+                <f:facet name="erptempmain">
+                    <af:panelHeader text="User Information" id="ph1">
+                        <f:facet name="context"/>
+                        <f:facet name="menuBar"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="legend"/>
+                        <f:facet name="info"/>
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.SysUsersCRUD.collectionModel}" var="row"
+                                      rows="#{bindings.SysUsersCRUD.rangeSize}"
+                                      emptyText="#{bindings.SysUsersCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.SysUsersCRUD.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.SysUsersCRUD.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.SysUsersCRUD.rangeSize}"
+                                      filterModel="#{bindings.SysUsersCRUDQuery.queryDescriptor}"
+                                      queryListener="#{bindings.SysUsersCRUDQuery.processQuery}" filterVisible="true"
+                                      varStatus="vs" id="t1" styleClass="AFStretchWidth">
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Companyid.name}"
+                                           filterable="true" headerText="#{bindings.SysUsersCRUD.hints.Companyid.label}"
+                                           id="c1" width="150">
+                                    <af:selectOneChoice value="#{row.bindings.Companyid.inputValue}"
+                                                        label="#{row.bindings.Companyid.label}"
+                                                        required="#{bindings.SysUsersCRUD.hints.Companyid.mandatory}"
+                                                        shortDesc="#{bindings.SysUsersCRUD.hints.Companyid.tooltip}"
+                                                        id="soc1">
+                                        <f:selectItems value="#{row.bindings.Companyid.items}" id="si1"/>
+                                        <f:validator binding="#{row.bindings.Companyid.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.FullName.name}" filterable="true"
+                                           headerText="#{bindings.SysUsersCRUD.hints.FullName.label}" id="c2"
+                                           width="200">
+                                    <af:inputText value="#{row.bindings.FullName.inputValue}"
+                                                  label="#{bindings.SysUsersCRUD.hints.FullName.label}"
+                                                  required="#{bindings.SysUsersCRUD.hints.FullName.mandatory}"
+                                                  columns="#{bindings.SysUsersCRUD.hints.FullName.displayWidth}"
+                                                  maximumLength="#{bindings.SysUsersCRUD.hints.FullName.precision}"
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.FullName.tooltip}" id="it1">
+                                        <f:validator binding="#{row.bindings.FullName.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Userid.name}" filterable="true"
+                                           headerText="#{bindings.SysUsersCRUD.hints.Userid.label}" id="c3" width="150">
+                                    <af:inputText value="#{row.bindings.Userid.inputValue}"
+                                                  label="#{bindings.SysUsersCRUD.hints.Userid.label}"
+                                                  required="#{bindings.SysUsersCRUD.hints.Userid.mandatory}"
+                                                  columns="#{bindings.SysUsersCRUD.hints.Userid.displayWidth}"
+                                                  maximumLength="#{bindings.SysUsersCRUD.hints.Userid.precision}"
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Userid.tooltip}" id="it2">
+                                        <f:validator binding="#{row.bindings.Userid.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Password.name}" filterable="true"
+                                           headerText="#{bindings.SysUsersCRUD.hints.Password.label}" id="c4">
+                                    <af:inputText value="#{row.bindings.Password.inputValue}"
+                                                  label="#{bindings.SysUsersCRUD.hints.Password.label}"
+                                                  required="#{bindings.SysUsersCRUD.hints.Password.mandatory}"
+                                                  columns="#{bindings.SysUsersCRUD.hints.Password.displayWidth}"
+                                                  maximumLength="#{bindings.SysUsersCRUD.hints.Password.precision}"
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Password.tooltip}" id="it3">
+                                        <f:validator binding="#{row.bindings.Password.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Locationid.name}"
+                                           filterable="true"
+                                           headerText="#{bindings.SysUsersCRUD.hints.Locationid.label}" id="c5">
+                                    <af:inputText value="#{row.bindings.Locationid.inputValue}"
+                                                  label="#{bindings.SysUsersCRUD.hints.Locationid.label}"
+                                                  required="#{bindings.SysUsersCRUD.hints.Locationid.mandatory}"
+                                                  columns="#{bindings.SysUsersCRUD.hints.Locationid.displayWidth}"
+                                                  maximumLength="#{bindings.SysUsersCRUD.hints.Locationid.precision}"
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Locationid.tooltip}"
+                                                  id="it4">
+                                        <f:validator binding="#{row.bindings.Locationid.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Storeid.name}" filterable="true"
+                                           headerText="#{bindings.SysUsersCRUD.hints.Storeid.label}" id="c6">
+                                    <af:inputText value="#{row.bindings.Storeid.inputValue}"
+                                                  label="#{bindings.SysUsersCRUD.hints.Storeid.label}"
+                                                  required="#{bindings.SysUsersCRUD.hints.Storeid.mandatory}"
+                                                  columns="#{bindings.SysUsersCRUD.hints.Storeid.displayWidth}"
+                                                  maximumLength="#{bindings.SysUsersCRUD.hints.Storeid.precision}"
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Storeid.tooltip}" id="it5">
+                                        <f:validator binding="#{row.bindings.Storeid.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Empid.name}" filterable="true"
+                                           headerText="#{bindings.SysUsersCRUD.hints.Empid.label}" id="c7">
+                                    <af:inputText value="#{row.bindings.Empid.inputValue}"
+                                                  label="#{bindings.SysUsersCRUD.hints.Empid.label}"
+                                                  required="#{bindings.SysUsersCRUD.hints.Empid.mandatory}"
+                                                  columns="#{bindings.SysUsersCRUD.hints.Empid.displayWidth}"
+                                                  maximumLength="#{bindings.SysUsersCRUD.hints.Empid.precision}"
+                                                  shortDesc="#{bindings.SysUsersCRUD.hints.Empid.tooltip}" id="it6">
+                                        <f:validator binding="#{row.bindings.Empid.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </af:panelHeader>
+                </f:facet>
                 <f:facet name="erptempleft"/>
             </af:pageTemplate>
         </af:form>
