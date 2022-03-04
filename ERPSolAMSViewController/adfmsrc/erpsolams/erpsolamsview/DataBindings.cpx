@@ -12,6 +12,8 @@
           usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef11"/>
     <page path="/WEB-INF/ERPSOLAMSBTF.xml#ERPSOLAMSBTF@ExeWithParaAMSSReportDetail"
           usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef111"/>
+    <page path="/WEB-INF/ERPSOLAMSBTF.xml#ERPSOLAMSBTF@RollbackBeforeFornAPS"
+          usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolams_erpsolamsview_ERPSolAMSMainPageDef"
@@ -25,6 +27,8 @@
           path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef11"/>
     <page id="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef111"
           path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_ExecuteWithParamsPageDef111"/>
+    <page id="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef"
+          path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolAMSAppModuleDataControl" Package="erpsolams.erpsolamsmodel.erpsolamsam"
@@ -36,6 +40,11 @@
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="ERPSolTempAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="ERPSolGLSAppModuleDataControl" Package="erpsolgls.erpsolglsmodel.erpsolglsam"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ERPSolGLSAppModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

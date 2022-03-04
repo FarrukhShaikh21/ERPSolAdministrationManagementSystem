@@ -5,19 +5,19 @@
    <TaskFlowReturn
       id="TaskFlowReturn2">
       <property
-         name="activityId">taskFlowReturn1</property>
+         name="activityId">RETURN-FROM-APS</property>
       <property
          name="finish">true</property>
       <property
          name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>RETURN-FROM-APS&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  RETURN-FROM-APS&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">63.948242</property>
+         name="y">46.896484</property>
       <property
-         name="x">495.0</property>
+         name="x">498.0</property>
    </TaskFlowReturn>
    <View
       id="View3">
@@ -30,7 +30,7 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">202.44824</property>
+         name="y">202.09766</property>
       <property
          name="x">496.01562</property>
    </View>
@@ -149,6 +149,101 @@
       <property
          name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
       <property
-         name="sdm:polyPoints">L50,788.35156,202.99414,537.0156,202.44824,R50</property>
+         name="sdm:polyPoints">L50,788.35156,202.99414,537.0156,201.74707,R50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn14">
+      <property
+         name="activityId">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ACT-ERP-SOL-LOGOUT&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ACT-ERP-SOL-LOGOUT&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">49.896484</property>
+      <property
+         name="x">623.0</property>
+   </TaskFlowReturn>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule15">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-82.80469</property>
+      <property
+         name="x">115.0</property>
+   </WildcardControlFlowRule>
+   <MethodCall
+      id="MethodCall16">
+      <property
+         name="activityId">RollbackBeforeFornAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackBeforeFornAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">53.344727</property>
+      <property
+         name="x">115.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase17"
+      from="WildcardControlFlowRule15"
+      to="MethodCall16">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">B50,115.0,-40.155273,115.5,-1.0058594,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall18">
+      <property
+         name="activityId">doERPGotoAPSActivity</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>doERPGotoAPSActivity&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">203.89648</property>
+      <property
+         name="x">115.0</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase19"
+      from="MethodCall16"
+      to="MethodCall18">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">B50,115.5,106.99414,115.0,149.5459,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View20">
+      <property
+         name="activityId">SYS_003</property>
+      <property
+         name="page">/SYS_003.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SYS_003&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">203.09766</property>
+      <property
+         name="x">-112.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="MethodCall18"
+      to="View20">
+      <property
+         name="fromOutcome">ERP-ACT-SYS-003</property>
+      <property
+         name="sdm:polyPoints">L50,74.0,203.5459,-71.5,202.74707,R50</property>
    </ControlFlowCase>
 </SDM>
