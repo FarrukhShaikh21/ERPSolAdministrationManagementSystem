@@ -13,6 +13,30 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccSysProgramView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysProgramView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovModuleid"
+    ListVOName="AccSysProgramView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Moduleid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ModuleName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModuleName"/>
+      <Item Value="Moduleid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SysUsersDetail"
     Entity="erpsolams.erpsolamsmodel.erpsolamseo.SysUsersDetail"/>
@@ -22,7 +46,15 @@
     PrecisionRule="true"
     EntityAttrName="Moduleid"
     EntityUsage="SysUsersDetail"
-    AliasName="MODULEID"/>
+    AliasName="MODULEID"
+    LOVName="LovModuleid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Levelid"
     IsNotNull="true"
@@ -159,4 +191,12 @@
     EntityAttrName="Approval2"
     EntityUsage="SysUsersDetail"
     AliasName="APPROVAL_2"/>
+  <ViewAttribute
+    Name="txtModuleName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtModuleName"
+    EntityUsage="SysUsersDetail"
+    AliasName="TXT_MODULE_NAME"/>
 </ViewObject>

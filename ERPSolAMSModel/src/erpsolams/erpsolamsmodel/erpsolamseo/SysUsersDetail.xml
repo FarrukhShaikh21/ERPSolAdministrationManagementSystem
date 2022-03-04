@@ -167,7 +167,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="SYS_USERS_DETAIL"/>
   <Attribute
@@ -186,7 +186,7 @@
     Name="CreationDate"
     ColumnName="CREATION_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="SYS_USERS_DETAIL"/>
   <Attribute
@@ -285,6 +285,30 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="txtModuleName"
+    Precision="80"
+    ColumnName="TXT_MODULE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[SysProgram?.ModuleName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolams.erpsolamsmodel.erpsolamseo.SysUsersDetail.txtModuleName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Moduleid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="SysProgram"
     Association="erpsolams.erpsolamsmodel.erpsolamseo.RSud370Assoc"
@@ -337,4 +361,8 @@
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUsersDetail.Userid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolams.erpsolamsmodel.ERPSolAMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

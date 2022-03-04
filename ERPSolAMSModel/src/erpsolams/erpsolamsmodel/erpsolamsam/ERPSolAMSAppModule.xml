@@ -10,4 +10,7 @@
   <ViewUsage
     Name="SysUsersCRUD"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUsersView"/>
+  <ViewUsage
+    Name="SysUsersDetailCRUD"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUsersDetailView"/>
 </AppModule>
