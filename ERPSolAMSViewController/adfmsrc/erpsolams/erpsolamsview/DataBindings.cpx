@@ -41,10 +41,5 @@
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="ERPSolTempAppModuleLocal" syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
-    <BC4JDataControl id="ERPSolGLSAppModuleDataControl" Package="erpsolgls.erpsolglsmodel.erpsolglsam"
-                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
-                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
-                     SupportsSortCollection="true" Configuration="ERPSolGLSAppModuleLocal" syncMode="Immediate"
-                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

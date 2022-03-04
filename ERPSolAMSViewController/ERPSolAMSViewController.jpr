@@ -74,13 +74,6 @@
             </hash>
             <value n="recognizerId" v="oracle.jdeveloper.library"/>
          </hash>
-         <hash>
-            <hash n="dependable">
-               <url n="sourceOwnerURL" path="../ERPSolAdministrationManagementSystem.jws"/>
-               <url n="sourceURL" path="../../../ERPSolutionsGLManagementSystem/trunk/ERPSolGLSModel/ERPSolGLSModel.jpr"/>
-            </hash>
-            <value n="recognizerId" v="oracle.jdeveloper.library"/>
-         </hash>
       </list>
    </hash>
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
@@ -183,6 +176,14 @@
    <hash n="oracle.jdeveloper.model.J2eeSettings">
       <value n="j2eeWebAppName" v="ERPSolAdministrationManagementSystem-ERPSolAMSViewController-webapp"/>
       <value n="j2eeWebContextRoot" v="ERPSolAdministrationManagementSystem-ERPSolAMSViewController-context-root"/>
+   </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Default">
+            <value n="custom" v="false"/>
+            <value n="name" v="Default"/>
+         </hash>
+      </hash>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
@@ -304,6 +305,10 @@
          </hash>
          <hash>
             <value n="id" v="Connection Manager"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -456,6 +461,10 @@
          </hash>
          <hash>
             <value n="id" v="Connection Manager"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

@@ -175,28 +175,15 @@
       <property
          name="x">115.0</property>
    </WildcardControlFlowRule>
-   <MethodCall
-      id="MethodCall16">
-      <property
-         name="activityId">RollbackBeforeFornAPS</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>RollbackBeforeFornAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="y">53.344727</property>
-      <property
-         name="x">115.5</property>
-   </MethodCall>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase17"
       from="WildcardControlFlowRule15"
-      to="MethodCall16">
+      to="MethodCall22">
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">B50,115.0,-40.155273,115.5,-1.0058594,T50</property>
+         name="sdm:polyPoints">B50,115.0,-40.155273,191.5,28.097656,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall18">
@@ -211,16 +198,6 @@
       <property
          name="x">115.0</property>
    </MethodCall>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase19"
-      from="MethodCall16"
-      to="MethodCall18">
-      <property
-         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
-      <property
-         name="sdm:polyPoints">B50,115.5,106.99414,115.0,149.5459,T50</property>
-   </ControlFlowCase>
    <View
       id="View20">
       <property
@@ -245,5 +222,28 @@
          name="fromOutcome">ERP-ACT-SYS-003</property>
       <property
          name="sdm:polyPoints">L50,74.0,203.5459,-71.5,202.74707,R50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall22">
+      <property
+         name="activityId">RollbackBeforeFornAPS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackBeforeFornAPS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">82.44824</property>
+      <property
+         name="x">191.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase23"
+      from="MethodCall22"
+      to="MethodCall18">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">L50,150.5,82.09766,115.0,149.5459,T50</property>
    </ControlFlowCase>
 </SDM>

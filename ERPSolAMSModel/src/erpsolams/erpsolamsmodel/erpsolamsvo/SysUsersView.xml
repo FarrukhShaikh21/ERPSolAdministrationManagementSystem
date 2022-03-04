@@ -17,6 +17,14 @@
     Name="AccAllCompanyView"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllCompanyView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllStoresView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllStoresView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -29,10 +37,48 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="CompanyCode"/>
+      <Item Value="Companyid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="CompanyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovLocationid"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovStoreid"
+    ListVOName="AccAllStoresView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Storeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StoreName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -72,7 +118,15 @@
     PrecisionRule="true"
     EntityAttrName="Locationid"
     EntityUsage="SysUsers"
-    AliasName="LOCATIONID"/>
+    AliasName="LOCATIONID"
+    LOVName="LovLocationid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Empid"
     PrecisionRule="true"
@@ -97,7 +151,15 @@
     PrecisionRule="true"
     EntityAttrName="Storeid"
     EntityUsage="SysUsers"
-    AliasName="STOREID"/>
+    AliasName="STOREID"
+    LOVName="LovStoreid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ModifiedDate"
     PrecisionRule="true"
