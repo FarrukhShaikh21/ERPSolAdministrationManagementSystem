@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="erptempmain">
-                    <af:panelHeader text="User Accounts" id="ph1">
+                    <af:panelHeader text="User Rights" id="ph1">
                         <f:facet name="context"/>
                         <f:facet name="menuBar"/>
                         <f:facet name="toolbar"/>
@@ -17,6 +17,11 @@
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar">
                                     <af:toolbar id="t2">
+                                        <af:button text="Excel" id="b5">
+                                            <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
+                                                                               filename="UserRights.xls"
+                                                                               title="User Rights"/>
+                                        </af:button>
                                         <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
                                                    disabled="#{!bindings.CreateInsert.enabled}" id="b1"
                                                    icon="#{resource['images:imgAdd.png']}"/>
