@@ -25,6 +25,18 @@
     Name="AccVWYesNoQVO"
     ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWUserHLevelQVO"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsqvo.VWUserHLevelQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSystemView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SystemView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SystemViewYearClosedVC"
+      FullName="erpsolams.erpsolamsmodel.erpsolamsvo.SystemView.SystemViewYearClosedVC"/>
+  </ViewAccessor>
   <ListBinding
     Name="LovModuleid"
     ListVOName="AccSysProgramView"
@@ -159,6 +171,61 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LovHLevel"
+    ListVOName="AccVWUserHLevelQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="HLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HlevelId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HHLevelName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovProjectid"
+    ListVOName="AccSystemView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Projectid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Projectid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ProjectName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovRestrictAccess"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RestrictAccess"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SysUsersDetail"
     Entity="erpsolams.erpsolamsmodel.erpsolamseo.SysUsersDetail"/>
@@ -190,14 +257,30 @@
     PrecisionRule="true"
     EntityAttrName="Projectid"
     EntityUsage="SysUsersDetail"
-    AliasName="PROJECTID"/>
+    AliasName="PROJECTID"
+    LOVName="LovProjectid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RestrictAccess"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="RestrictAccess"
     EntityUsage="SysUsersDetail"
-    AliasName="RESTRICT_ACCESS"/>
+    AliasName="RESTRICT_ACCESS"
+    LOVName="LovRestrictAccess">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Userid"
     IsNotNull="true"
@@ -266,7 +349,15 @@
     PrecisionRule="true"
     EntityAttrName="HLevel"
     EntityUsage="SysUsersDetail"
-    AliasName="H_LEVEL"/>
+    AliasName="H_LEVEL"
+    LOVName="LovHLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Canview"
     PrecisionRule="true"

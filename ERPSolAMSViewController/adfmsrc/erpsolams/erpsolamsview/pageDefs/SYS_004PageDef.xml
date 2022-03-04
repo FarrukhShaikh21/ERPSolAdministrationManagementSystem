@@ -5,6 +5,30 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="SysUsersDetailCRUD" RangeSize="25" DataControl="ERPSolAMSAppModuleDataControl"
+              id="SysUsersDetailCRUDIterator"/>
+    <searchRegion Binds="SysUsersDetailCRUDIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SysUsersDetailCRUDQuery"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <tree IterBinding="SysUsersDetailCRUDIterator" id="SysUsersDetailCRUD">
+      <nodeDefinition DefName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUsersDetailView" Name="SysUsersDetailCRUD0">
+        <AttrNames>
+          <Item Value="Userid"/>
+          <Item Value="Moduleid"/>
+          <Item Value="txtModuleName"/>
+          <Item Value="HLevel"/>
+          <Item Value="Levelid"/>
+          <Item Value="Projectid"/>
+          <Item Value="RestrictAccess"/>
+          <Item Value="Canadd"/>
+          <Item Value="Canedit"/>
+          <Item Value="Candelete"/>
+          <Item Value="Submit"/>
+          <Item Value="Unsubmit"/>
+          <Item Value="Print"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
 </pageDefinition>
