@@ -30,9 +30,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">234.79883</property>
+         name="y">202.44824</property>
       <property
-         name="x">503.01562</property>
+         name="x">496.01562</property>
    </View>
    <MethodCall
       id="MethodCall4">
@@ -117,5 +117,38 @@
          name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
       <property
          name="sdm:polyPoints">R50,594.35156,350.39648,788.35156,352.39648,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall11">
+      <property
+         name="activityId">ExeWithParaAMSSReportDetail</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExeWithParaAMSSReportDetail&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">203.34473</property>
+      <property
+         name="x">829.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="MethodCall9"
+      to="MethodCall11">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
+      <property
+         name="sdm:polyPoints">T50,829.35156,298.39648,829.35156,256.99414,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="MethodCall11"
+      to="View3">
+      <property
+         name="fromOutcome">ERP-SOL-ACT-GOTO-AMS-MAIN</property>
+      <property
+         name="sdm:polyPoints">L50,788.35156,202.99414,537.0156,202.44824,R50</property>
    </ControlFlowCase>
 </SDM>

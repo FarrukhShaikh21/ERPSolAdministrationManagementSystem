@@ -36,7 +36,13 @@
     <method-call id="ExeWithParaAMSSReports">
       <method>#{bindings.ExecuteWithParams.execute}</method>
       <outcome>
-        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="ExeWithParaAMSSReportDetail">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</fixed-outcome>
       </outcome>
     </method-call>
     <control-flow-rule id="__2">
@@ -58,6 +64,20 @@
       <control-flow-case id="__7">
         <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
         <to-activity-id>ExeWithParaAMSSReports</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>ExeWithParaAMSSReports</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
+        <to-activity-id>ExeWithParaAMSSReportDetail</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__10">
+      <from-activity-id>ExeWithParaAMSSReportDetail</from-activity-id>
+      <control-flow-case id="__11">
+        <from-outcome>ERP-SOL-ACT-GOTO-AMS-MAIN</from-outcome>
+        <to-activity-id>ERPSolAMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>
