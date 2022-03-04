@@ -17,6 +17,14 @@
     Name="AccSysProgramView"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysProgramView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccSysUsersView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUsersView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovModuleid"
     ListVOName="AccSysProgramView"
@@ -34,6 +42,82 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ModuleName"/>
       <Item Value="Moduleid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovUserid"
+    ListVOName="AccSysUsersView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Userid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Userid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Userid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCanadd"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Canadd"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCanedit"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Canedit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovCandelete"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Candelete"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -82,7 +166,15 @@
     PrecisionRule="true"
     EntityAttrName="Userid"
     EntityUsage="SysUsersDetail"
-    AliasName="USERID"/>
+    AliasName="USERID"
+    LOVName="LovUserid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
@@ -94,19 +186,43 @@
     PrecisionRule="true"
     EntityAttrName="Canadd"
     EntityUsage="SysUsersDetail"
-    AliasName="CANADD"/>
+    AliasName="CANADD"
+    LOVName="LovCanadd">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Canedit"
     PrecisionRule="true"
     EntityAttrName="Canedit"
     EntityUsage="SysUsersDetail"
-    AliasName="CANEDIT"/>
+    AliasName="CANEDIT"
+    LOVName="LovCanedit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Candelete"
     PrecisionRule="true"
     EntityAttrName="Candelete"
     EntityUsage="SysUsersDetail"
-    AliasName="CANDELETE"/>
+    AliasName="CANDELETE"
+    LOVName="LovCandelete">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="HLevel"
     PrecisionRule="true"
