@@ -13,4 +13,10 @@
   <ViewUsage
     Name="SysUsersDetailCRUD"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUsersDetailView"/>
+  <ViewUsage
+    Name="SysUsersAutoSuggestRO"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUsersView"/>
+  <ViewUsage
+    Name="SysProgramAutoSuggestRO"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysProgramView"/>
 </AppModule>

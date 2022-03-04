@@ -208,29 +208,25 @@ public class ERPSolAMSBean {
     }   
 
 
-    public List<SelectItem> doERPSolGetAutoSuggestedSalesPersonValues(String pStringValues) {
+    public List<SelectItem> doERPSolGetAutoSuggestedLoginUser(String pStringValues) {
     //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
-        System.out.println("a");
-//        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("b");
-//        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
-        System.out.println("c");
-        
-//        String ERPCustomerId=""+ERPSolib.getCurrentRow().getAttribute("Customerid");
-
-        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("b");
-        AttributeBinding ERPCustomerId =(AttributeBinding)ERPSolbc.getControlBinding("Customerid");
-        
-        System.out.println("d");
-        System.out.println(ERPCustomerId);//ERPSolGlobalViewBean.
-        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "SoSalesPersonsAutoSuggestRO",
-                                                            "SALESPERSONID IN (SELECT ASP.SALESPERSONID from ALL_CUSTOMER_SALESPERSON ASP WHERE ASP.CUSTOMERID='"+ERPCustomerId+"') AND UPPER(CONCAT(Salespersonid,name))", "Name", "Salespersonid", 10,"ERPSolAMSAppModuleDataControl");
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "SysUsersAutoSuggestRO",
+                                                            "UPPER(CONCAT(Userid,FULL_NAME))", "Userid", "FullName", 10,"ERPSolAMSAppModuleDataControl");
         return ResultList;
         
-    }   
+    }  
+    
+    public List<SelectItem> doERPSolGetAutoSuggestedModuleId(String pStringValues) {
+    //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
+        //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "SysProgramAutoSuggestRO",
+                                                            "UPPER(CONCAT(Moduleid,Module_Name))", "Moduleid", "ModuleName", 10,"ERPSolAMSAppModuleDataControl");
+        return ResultList;
+        
+    }  
    
     public List<SelectItem> doERPSolGetAutoSuggestedSupplierValues(String pStringValues) {
     //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {

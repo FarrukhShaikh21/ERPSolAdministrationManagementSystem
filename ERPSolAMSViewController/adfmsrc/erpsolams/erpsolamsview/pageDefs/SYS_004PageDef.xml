@@ -30,5 +30,12 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="SysUsersDetailCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="SysUsersDetailCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolAMSAppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolAMSAppModuleDataControl"/>
   </bindings>
 </pageDefinition>

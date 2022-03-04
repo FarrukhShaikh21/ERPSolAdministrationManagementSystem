@@ -64,6 +64,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolams.erpsolamsmodel.erpsolamseo.SysProgram.Projectid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ModuleType"
@@ -277,4 +285,8 @@
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysProgram.Levelid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolams.erpsolamsmodel.ERPSolAMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

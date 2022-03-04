@@ -48,8 +48,14 @@
       <Item Value="Moduleid"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Levelid"/>
+      <Item Value="Projectid"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ModuleName"/>
+      <Item Value="Moduleid"/>
+      <Item Value="Levelid"/>
+      <Item Value="Projectid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ModuleName"/>
