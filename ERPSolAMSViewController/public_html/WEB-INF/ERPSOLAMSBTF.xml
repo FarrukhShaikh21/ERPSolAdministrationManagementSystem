@@ -137,6 +137,14 @@
         <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
         <to-activity-id>RollbackBeforeFornAPS</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__24">
+        <from-outcome>ERPSOL-RETURN-FROM-APS</from-outcome>
+        <to-activity-id>RETURN-FROM-APS</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__25">
+        <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
+        <to-activity-id>ACT-ERP-SOL-LOGOUT</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__16">
       <from-activity-id>doERPGotoAPSActivity</from-activity-id>

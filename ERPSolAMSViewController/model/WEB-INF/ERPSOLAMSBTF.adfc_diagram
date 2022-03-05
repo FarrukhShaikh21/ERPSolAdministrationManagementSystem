@@ -162,9 +162,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">49.896484</property>
+         name="y">45.195312</property>
       <property
-         name="x">623.0</property>
+         name="x">670.0</property>
    </TaskFlowReturn>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule15">
@@ -221,7 +221,7 @@
       <property
          name="fromOutcome">ERP-ACT-SYS-003</property>
       <property
-         name="sdm:polyPoints">L50,74.0,203.5459,-71.5,202.74707,R50</property>
+         name="sdm:polyPoints">L54,72.673225,207.0459,-71.5,202.74707,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall22">
@@ -269,6 +269,26 @@
       <property
          name="fromOutcome">ERP-ACT-SYS-004</property>
       <property
-         name="sdm:polyPoints">R41,R65</property>
+         name="sdm:polyPoints">L46,74.0,200.0459,-75.5,74.44824,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase25"
+      from="WildcardControlFlowRule15"
+      to="TaskFlowReturn2">
+      <property
+         name="fromOutcome">ERPSOL-RETURN-FROM-APS</property>
+      <property
+         name="sdm:polyPoints">R50,151.0,-82.65527,457.0,46.5459,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase26"
+      from="WildcardControlFlowRule15"
+      to="TaskFlowReturn14">
+      <property
+         name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="sdm:polyPoints">R50,L36</property>
    </ControlFlowCase>
 </SDM>

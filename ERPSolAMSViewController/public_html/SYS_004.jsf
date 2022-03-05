@@ -23,10 +23,10 @@
                                                                                title="User Rights"/>
                                         </af:button>
                                         <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
-                                                   disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                   disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                                    icon="#{resource['images:imgAdd.png']}"/>
                                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                                                   disabled="#{!bindings.Delete.enabled}" id="b2"
+                                                   disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowDelete=='N'}" id="b2"
                                                    icon="#{resource['images:imgDelete.png']}"/>
                                         <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b4"
                                                    icon="#{resource['images:imgSave.png']}"/>

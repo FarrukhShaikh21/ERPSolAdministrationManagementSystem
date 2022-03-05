@@ -17,10 +17,10 @@
                             <f:facet name="toolbar">
                                 <af:toolbar id="t2">
                                     <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add New"
-                                               disabled="#{!bindings.CreateInsert.enabled}" id="b3"
+                                               disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b3"
                                                icon="#{resource['images:imgAdd.png']}"/>
                                     <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                                               disabled="#{!bindings.Delete.enabled}" id="b4"
+                                               disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowDelete=='N'}" id="b4"
                                                icon="#{resource['images:imgDelete.png']}"/>
                                     <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b1"
                                                icon="#{resource['images:imgSave.png']}"/>
