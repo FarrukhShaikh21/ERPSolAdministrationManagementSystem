@@ -35,9 +35,9 @@
       <managed-bean-class>erpsoltemp.erpsoltempview.erptempclass.ERPSolutionTemplateBean</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
-    <task-flow-return id="RETURN-FROM-APS">
+    <task-flow-return id="RETURN-FROM-AMS">
       <outcome>
-        <name>RETURN-FROM-APS</name>
+        <name>RETURN-FROM-AMS</name>
       </outcome>
     </task-flow-return>
     <view id="ERPSolAMSMain">
@@ -78,7 +78,7 @@
         <name>ACT-ERP-SOL-LOGOUT</name>
       </outcome>
     </task-flow-return>
-    <method-call id="doERPGotoAPSActivity">
+    <method-call id="doERPGotoAMSActivity">
       <method>#{pageFlowScope.ERPSolTempBean.doGotoERPSolActivity}</method>
       <outcome>
         <to-string/>
@@ -87,7 +87,7 @@
     <view id="SYS_003">
       <page>/SYS_003.jsf</page>
     </view>
-    <method-call id="RollbackBeforeFornAPS">
+    <method-call id="RollbackBeforeFornAMS">
       <method>#{bindings.Rollback.execute}</method>
       <outcome>
         <fixed-outcome>ACTStartERPSolutionTaskFlow</fixed-outcome>
@@ -141,11 +141,11 @@
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__13">
         <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
-        <to-activity-id>RollbackBeforeFornAPS</to-activity-id>
+        <to-activity-id>RollbackBeforeFornAMS</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__24">
-        <from-outcome>ERPSOL-RETURN-FROM-APS</from-outcome>
-        <to-activity-id>RETURN-FROM-APS</to-activity-id>
+        <from-outcome>ERPSOL-RETURN-FROM-AMS</from-outcome>
+        <to-activity-id>RETURN-FROM-AMS</to-activity-id>
       </control-flow-case>
       <control-flow-case id="__25">
         <from-outcome>ACT-ERP-SOL-LOGOUT</from-outcome>
@@ -153,7 +153,7 @@
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__16">
-      <from-activity-id>doERPGotoAPSActivity</from-activity-id>
+      <from-activity-id>doERPGotoAMSActivity</from-activity-id>
       <control-flow-case id="__17">
         <from-outcome>ERP-ACT-SYS-003</from-outcome>
         <to-activity-id>SYS_003</to-activity-id>
@@ -164,10 +164,10 @@
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__14">
-      <from-activity-id>RollbackBeforeFornAPS</from-activity-id>
+      <from-activity-id>RollbackBeforeFornAMS</from-activity-id>
       <control-flow-case id="__15">
         <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
-        <to-activity-id>doERPGotoAPSActivity</to-activity-id>
+        <to-activity-id>doERPGotoAMSActivity</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__26">

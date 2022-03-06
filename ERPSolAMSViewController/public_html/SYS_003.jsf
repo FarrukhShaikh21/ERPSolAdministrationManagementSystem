@@ -12,7 +12,7 @@
                         <f:facet name="toolbar">
                             <af:toolbar id="t3">
                                 <af:button text="Exit" id="b5" icon="#{resource['images:imgExitForm.png']}"
-                                           iconPosition="top"/>
+                                           iconPosition="top" action="ACT-ERPSOL-EXIT-FORM"/>
                             </af:toolbar>
                         </f:facet>
                         <f:facet name="legend"/>
