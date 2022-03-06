@@ -96,6 +96,12 @@
     <view id="SYS_004">
       <page>/SYS_004.jsf</page>
     </view>
+    <method-call id="RollbackCloseFormAMS">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>ACT-ERPSOL-EXIT-FORM</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__2">
       <from-activity-id>doERPSolAMSSessionGlobals</from-activity-id>
       <control-flow-case id="__3">
@@ -162,6 +168,20 @@
       <control-flow-case id="__15">
         <from-outcome>ACTStartERPSolutionTaskFlow</from-outcome>
         <to-activity-id>doERPGotoAPSActivity</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__26">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome>ACT-ERPSOL-EXIT-FORM</from-outcome>
+        <to-activity-id>RollbackCloseFormAMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id>RollbackCloseFormAMS</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome>ACT-ERPSOL-EXIT-FORM</from-outcome>
+        <to-activity-id>ERPSolAMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

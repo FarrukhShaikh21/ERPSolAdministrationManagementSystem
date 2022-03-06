@@ -15,6 +15,8 @@
     <page path="/WEB-INF/ERPSOLAMSBTF.xml#ERPSOLAMSBTF@RollbackBeforeFornAPS"
           usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef"/>
     <page path="/SYS_004.jsf" usageId="erpsolams_erpsolamsview_SYS_004PageDef"/>
+    <page path="/WEB-INF/ERPSOLAMSBTF.xml#ERPSOLAMSBTF@RollbackCloseFormAMS"
+          usageId="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolams_erpsolamsview_ERPSolAMSMainPageDef"
@@ -31,6 +33,8 @@
     <page id="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef"
           path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef"/>
     <page id="erpsolams_erpsolamsview_SYS_004PageDef" path="erpsolams.erpsolamsview.pageDefs.SYS_004PageDef"/>
+    <page id="erpsolams_erpsolamsview_ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef1"
+          path="erpsolams.erpsolamsview.pageDefs.ERPSOLAMSBTF_ERPSOLAMSBTF_RollbackPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolAMSAppModuleDataControl" Package="erpsolams.erpsolamsmodel.erpsolamsam"

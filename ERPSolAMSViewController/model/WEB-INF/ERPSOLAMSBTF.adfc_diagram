@@ -279,7 +279,7 @@
       <property
          name="fromOutcome">ERPSOL-RETURN-FROM-APS</property>
       <property
-         name="sdm:polyPoints">R50,151.0,-82.65527,457.0,46.5459,L50</property>
+         name="sdm:polyPoints">R55,151.0,-79.15527,457.0,46.5459,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -289,6 +289,48 @@
       <property
          name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
       <property
-         name="sdm:polyPoints">R50,L36</property>
+         name="sdm:polyPoints">R45,151.9491,-86.15527,670.0,-9.155273,T50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule27">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">77.29883</property>
+      <property
+         name="x">315.0</property>
+   </WildcardControlFlowRule>
+   <MethodCall
+      id="MethodCall28">
+      <property
+         name="activityId">RollbackCloseFormAMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackCloseFormAMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">223.44824</property>
+      <property
+         name="x">340.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase29"
+      from="WildcardControlFlowRule27"
+      to="MethodCall28">
+      <property
+         name="fromOutcome">ACT-ERPSOL-EXIT-FORM</property>
+      <property
+         name="sdm:polyPoints">B50,315.0,119.94824,340.5,169.09766,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase30"
+      from="MethodCall28"
+      to="View3">
+      <property
+         name="fromOutcome">ACT-ERPSOL-EXIT-FORM</property>
+      <property
+         name="sdm:polyPoints">R50,381.5,223.09766,455.01562,201.74707,L50</property>
    </ControlFlowCase>
 </SDM>
