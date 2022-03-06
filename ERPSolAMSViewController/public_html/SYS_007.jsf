@@ -9,7 +9,8 @@
                     <af:panelBox text="User Customer Access" id="pb1" showDisclosure="false">
                         <f:facet name="toolbar">
                             <af:toolbar id="t4">
-                                <af:button text="Exit Form" id="b5" icon="#{resource['images:imgExitForm.png']}"/>
+                                <af:button text="Exit Form" id="b5" icon="#{resource['images:imgExitForm.png']}"
+                                           action="ACT-ERPSOL-EXIT-FORM"/>
                             </af:toolbar>
                         </f:facet>
                         <af:panelGridLayout id="pgl1">
@@ -109,12 +110,12 @@
                                                     </af:button>
                                                     <af:button actionListener="#{bindings.CreateInsert.execute}"
                                                                text="Add New Customer"
-                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                               disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                                                icon="#{resource['images:imgAdd.png']}"
                                                                iconPosition="top"/>
                                                     <af:button actionListener="#{bindings.Delete.execute}"
                                                                text="Delete Customer"
-                                                               disabled="#{!bindings.Delete.enabled}" id="b2"
+                                                               disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowDelete=='N'}" id="b2"
                                                                icon="#{resource['images:imgDelete.png']}"
                                                                iconPosition="top"/>
                                                 </af:toolbar>
