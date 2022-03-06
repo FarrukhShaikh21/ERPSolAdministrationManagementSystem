@@ -7,10 +7,14 @@
             <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="erptempmain">
                     <af:panelBox text="User Customer Access" id="pb1" showDisclosure="false">
-                        <f:facet name="toolbar"/>
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t4">
+                                <af:button text="Exit Form" id="b5" icon="#{resource['images:imgExitForm.png']}"/>
+                            </af:toolbar>
+                        </f:facet>
                         <af:panelGridLayout id="pgl1">
                             <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
-                                <af:gridCell marginStart="5px" width="50%" id="gc1" halign="stretch">
+                                <af:gridCell marginStart="5px" width="60%" id="gc1" halign="stretch">
                                     <af:table value="#{bindings.SysUsersCRUD.collectionModel}" var="row"
                                               rows="#{bindings.SysUsersCRUD.rangeSize}"
                                               emptyText="#{bindings.SysUsersCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -20,7 +24,9 @@
                                               rowSelection="single" fetchSize="#{bindings.SysUsersCRUD.rangeSize}"
                                               filterModel="#{bindings.SysUsersCRUDQuery.queryDescriptor}"
                                               queryListener="#{bindings.SysUsersCRUDQuery.processQuery}"
-                                              filterVisible="true" varStatus="vs" id="t1" styleClass="AFStretchWidth">
+                                              filterVisible="true" varStatus="vs" id="t1" styleClass="AFStretchWidth"
+                                              columnStretching="column:c3" scrollPolicy="page" autoHeightRows="18"
+                                              displayRow="selected">
                                         <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Companyid.name}"
                                                    filterable="true"
                                                    headerText="#{bindings.SysUsersCRUD.hints.Companyid.label}" id="c1">
@@ -49,7 +55,8 @@
                                         </af:column>
                                         <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Locationid.name}"
                                                    filterable="true"
-                                                   headerText="#{bindings.SysUsersCRUD.hints.Locationid.label}" id="c4">
+                                                   headerText="#{bindings.SysUsersCRUD.hints.Locationid.label}" id="c4"
+                                                   width="150" displayIndex="-1">
                                             <af:selectOneChoice value="#{row.bindings.Locationid.inputValue}"
                                                                 label="#{row.bindings.Locationid.label}"
                                                                 required="#{bindings.SysUsersCRUD.hints.Locationid.mandatory}"
@@ -61,7 +68,8 @@
                                         </af:column>
                                         <af:column sortProperty="#{bindings.SysUsersCRUD.hints.Storeid.name}"
                                                    filterable="true"
-                                                   headerText="#{bindings.SysUsersCRUD.hints.Storeid.label}" id="c5">
+                                                   headerText="#{bindings.SysUsersCRUD.hints.Storeid.label}" id="c5"
+                                                   width="150" displayIndex="-1">
                                             <af:selectOneChoice value="#{row.bindings.Storeid.inputValue}"
                                                                 label="#{row.bindings.Storeid.label}"
                                                                 required="#{bindings.SysUsersCRUD.hints.Storeid.mandatory}"
@@ -73,7 +81,75 @@
                                         </af:column>
                                     </af:table>
                                 </af:gridCell>
-                                <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
+                                <af:gridCell marginStart="5px" width="40%" marginEnd="5px" id="gc2" halign="stretch"
+                                             valign="stretch">
+                                    <af:panelCollection id="pc1">
+                                        <f:facet name="menus"/>
+                                        <f:facet name="toolbar">
+                                            <af:toolbar id="t3" flex="5">
+                                                <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b4"
+                                                           icon="#{resource['images:imgSave.png']}" iconPosition="top"/>
+                                                <af:button actionListener="#{bindings.Rollback.execute}" text="Undo" immediate="true"
+                                                           id="b3" icon="#{resource['images:imgUndo.png']}"
+                                                           iconPosition="top">
+                                                    <af:resetActionListener/>
+                                                </af:button>
+                                                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                           text="Add New Customer"
+                                                           disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                                           icon="#{resource['images:imgAdd.png']}" iconPosition="top"/>
+                                                <af:button actionListener="#{bindings.Delete.execute}"
+                                                           text="Delete Customer"
+                                                           disabled="#{!bindings.Delete.enabled}" id="b2"
+                                                           icon="#{resource['images:imgDelete.png']}"
+                                                           iconPosition="top"/>
+                                            </af:toolbar>
+                                        </f:facet>
+                                        <f:facet name="statusbar"/>
+                                        <af:table value="#{bindings.SysUserCustomerDetCRUD.collectionModel}" var="row"
+                                                  rows="#{bindings.SysUserCustomerDetCRUD.rangeSize}"
+                                                  emptyText="#{bindings.SysUserCustomerDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.SysUserCustomerDetCRUD.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.SysUserCustomerDetCRUD.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.SysUserCustomerDetCRUD.rangeSize}"
+                                                  filterModel="#{bindings.SysUserCustomerDetCRUDQuery.queryDescriptor}"
+                                                  queryListener="#{bindings.SysUserCustomerDetCRUDQuery.processQuery}"
+                                                  filterVisible="true" varStatus="vs" id="t2" columnStretching="last"
+                                                  autoHeightRows="10" scrollPolicy="page"
+                                                  partialTriggers="::b4 ::b3 ::b1 ::b2">
+                                            <af:column sortProperty="#{bindings.SysUserCustomerDetCRUD.hints.Customerid.name}"
+                                                       filterable="true"
+                                                       headerText="#{bindings.SysUserCustomerDetCRUD.hints.Customerid.label}"
+                                                       id="c6" width="120" displayIndex="-1">
+                                                <af:inputComboboxListOfValues id="customeridId"
+                                                                              popupTitle="Search and Select: #{bindings.SysUserCustomerDetCRUD.hints.Customerid.label}"
+                                                                              value="#{row.bindings.Customerid.inputValue}"
+                                                                              model="#{row.bindings.Customerid.listOfValuesModel}"
+                                                                              required="#{bindings.SysUserCustomerDetCRUD.hints.Customerid.mandatory}"
+                                                                              columns="#{bindings.SysUserCustomerDetCRUD.hints.Customerid.displayWidth}"
+                                                                              shortDesc="#{bindings.SysUserCustomerDetCRUD.hints.Customerid.tooltip}"
+                                                                              autoSubmit="true">
+                                                    <f:validator binding="#{row.bindings.Customerid.validator}"/>
+                                                    <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolAMSPageFlowBean.doERPSolGetAutoSuggestedCustomerValues}"/>
+                                                </af:inputComboboxListOfValues>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.SysUserCustomerDetCRUD.hints.txtCustomerName.label}"
+                                                       filterable="true" id="c7">
+                                                <af:inputText value="#{row.bindings.txtCustomerName.inputValue}"
+                                                              label="#{bindings.SysUserCustomerDetCRUD.hints.txtCustomerName.label}"
+                                                              required="#{bindings.SysUserCustomerDetCRUD.hints.txtCustomerName.mandatory}"
+                                                              columns="#{bindings.SysUserCustomerDetCRUD.hints.txtCustomerName.displayWidth}"
+                                                              maximumLength="#{bindings.SysUserCustomerDetCRUD.hints.txtCustomerName.precision}"
+                                                              shortDesc="#{bindings.SysUserCustomerDetCRUD.hints.txtCustomerName.tooltip}"
+                                                              id="it1" readOnly="true" partialTriggers="customeridId">
+                                                    <f:validator binding="#{row.bindings.txtCustomerName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelCollection>
+                                </af:gridCell>
                             </af:gridRow>
                         </af:panelGridLayout>
                     </af:panelBox>

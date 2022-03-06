@@ -23,8 +23,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USER_CUSTOMER"
-    PrimaryKey="true">
+    TableName="SYS_USER_CUSTOMER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
@@ -36,8 +35,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USER_CUSTOMER"
-    PrimaryKey="true">
+    TableName="SYS_USER_CUSTOMER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -87,7 +85,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USER_CUSTOMER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -101,6 +98,16 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="RowID"
+    IsUpdateable="false"
+    ColumnName="ROWID"
+    SQLType="ROWID"
+    Type="oracle.jbo.domain.RowID"
+    ColumnType="ROWID"
+    TableName="SYS_USER_CUSTOMER"
+    RetrievedOnInsert="true"
+    PrimaryKey="true"/>
   <AccessorAttribute
     Name="SysUsers"
     Association="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc"
@@ -122,8 +129,7 @@
       <Attr Name="_DBObjectName" Value="SYSUSERCUSTOMER_PRIMARY_KEY"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Userid"/>
-      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Customerid"/>
+      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.RowID"/>
     </AttrArray>
   </Key>
   <Key

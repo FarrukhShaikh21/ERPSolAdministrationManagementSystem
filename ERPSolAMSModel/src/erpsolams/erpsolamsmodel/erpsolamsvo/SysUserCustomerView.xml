@@ -96,6 +96,13 @@
     AliasName="TXT_CUSTOMER_NAME"
     IsQueriable="false"
     IsPersistent="false"/>
+  <ViewAttribute
+    Name="RowID"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="RowID"
+    EntityUsage="SysUserCustomer"
+    AliasName="ROWID"/>
   <ViewLinkAccessor
     Name="SysUsersView"
     ViewLink="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"

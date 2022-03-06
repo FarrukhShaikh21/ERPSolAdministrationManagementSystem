@@ -221,7 +221,7 @@
       <property
          name="fromOutcome">ERP-ACT-SYS-003</property>
       <property
-         name="sdm:polyPoints">L58,69.94961,210.19531,-71.5,202.74707,R50</property>
+         name="sdm:polyPoints">L54,72.68017,206.69531,-71.5,202.74707,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall22">
@@ -244,7 +244,7 @@
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">L50,150.5,81.396484,115.0,149.19531,T50</property>
+         name="sdm:polyPoints">L50,150.5,81.396484,118.5,149.19531,T56</property>
    </ControlFlowCase>
    <View
       id="View23">
@@ -269,7 +269,7 @@
       <property
          name="fromOutcome">ERP-ACT-SYS-004</property>
       <property
-         name="sdm:polyPoints">L50,71.33849,203.19531,-75.5,74.44824,R50</property>
+         name="sdm:polyPoints">L46,74.0,199.69531,-75.5,74.44824,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -344,9 +344,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">-32.20117</property>
+         name="y">-42.902344</property>
       <property
-         name="x">-116.5</property>
+         name="x">-38.5</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -356,6 +356,6 @@
       <property
          name="fromOutcome">ERP-ACT-SYS-007</property>
       <property
-         name="sdm:polyPoints">L42,74.0,196.19531,-116.5,21.448242,B50</property>
+         name="sdm:polyPoints">T44,111.5,149.19531,-38.5,10.74707,B50</property>
    </ControlFlowCase>
 </SDM>

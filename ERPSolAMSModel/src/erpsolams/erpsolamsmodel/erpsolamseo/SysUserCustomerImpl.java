@@ -5,6 +5,7 @@ import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.domain.Date;
+import oracle.jbo.domain.RowID;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -26,6 +27,7 @@ public class SysUserCustomerImpl extends ERPSolGlobalsEntityImpl {
         Modifiedby,
         ModifiedDate,
         txtCustomerName,
+        RowID,
         SysUsers,
         AllCustomers;
         private static AttributesEnum[] vals = null;
@@ -51,6 +53,7 @@ public class SysUserCustomerImpl extends ERPSolGlobalsEntityImpl {
         }
     }
 
+
     public static final int USERID = AttributesEnum.Userid.index();
     public static final int CUSTOMERID = AttributesEnum.Customerid.index();
     public static final int CREATEDBY = AttributesEnum.Createdby.index();
@@ -58,6 +61,7 @@ public class SysUserCustomerImpl extends ERPSolGlobalsEntityImpl {
     public static final int MODIFIEDBY = AttributesEnum.Modifiedby.index();
     public static final int MODIFIEDDATE = AttributesEnum.ModifiedDate.index();
     public static final int TXTCUSTOMERNAME = AttributesEnum.txtCustomerName.index();
+    public static final int ROWID = AttributesEnum.RowID.index();
     public static final int SYSUSERS = AttributesEnum.SysUsers.index();
     public static final int ALLCUSTOMERS = AttributesEnum.AllCustomers.index();
 
@@ -73,6 +77,7 @@ public class SysUserCustomerImpl extends ERPSolGlobalsEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer");
     }
+
 
     /**
      * Gets the attribute value for Userid, using the alias name Userid.
@@ -187,6 +192,14 @@ public class SysUserCustomerImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for RowID, using the alias name RowID.
+     * @return the value of RowID
+     */
+    public RowID getRowID() {
+        return (RowID) getAttributeInternal(ROWID);
+    }
+
+    /**
      * @return the associated entity SysUsersImpl.
      */
     public SysUsersImpl getSysUsers() {
@@ -230,6 +243,7 @@ public class SysUserCustomerImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
+        setERPISGenertePK("NO");
         super.create(attributeList);
     }
 

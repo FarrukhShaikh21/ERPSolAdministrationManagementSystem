@@ -181,7 +181,7 @@ public class ERPSolAMSBean {
         System.out.println("d");
 //        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllCustomersAutoSuggestRO",
-                                                            " UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "CustomerName", "Customerid", 10,"ERPSolAMSAppModuleDataControl");
+                                                            " UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "Customerid", "CustomerName", 10,"ERPSolAMSAppModuleDataControl");
         return ResultList;
         
     }   

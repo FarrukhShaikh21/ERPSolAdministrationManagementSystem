@@ -9,6 +9,10 @@
               id="SysUsersCRUDIterator"/>
     <searchRegion Binds="SysUsersCRUDIterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SysUsersCRUDQuery"/>
+    <iterator Binds="SysUserCustomerDetCRUD" RangeSize="25" DataControl="ERPSolAMSAppModuleDataControl"
+              id="SysUserCustomerDetCRUDIterator"/>
+    <searchRegion Binds="SysUserCustomerDetCRUDIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SysUserCustomerDetCRUDQuery"/>
   </executables>
   <bindings>
     <tree IterBinding="SysUsersCRUDIterator" id="SysUsersCRUD">
@@ -22,5 +26,23 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="SysUserCustomerDetCRUDIterator" id="SysUserCustomerDetCRUD">
+      <nodeDefinition DefName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUserCustomerView" Name="SysUserCustomerDetCRUD0">
+        <AttrNames>
+          <Item Value="Customerid"/>
+          <Item Value="txtCustomerName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SysUserCustomerDetCRUDIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"
+            InstanceName="ERPSolAMSAppModuleDataControl.SysUserCustomerDetCRUD"
+            DataControl="ERPSolAMSAppModuleDataControl"/>
+    <action IterBinding="SysUserCustomerDetCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"
+            InstanceName="ERPSolAMSAppModuleDataControl.SysUserCustomerDetCRUD"
+            DataControl="ERPSolAMSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolAMSAppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolAMSAppModuleDataControl"/>
   </bindings>
 </pageDefinition>
