@@ -43,7 +43,8 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
         EbsUserid,
         UserType,
         Userseq,
-        SysUsersDetail;
+        SysUsersDetail,
+        SysUserCustomer;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -66,6 +67,8 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int COMPANYID = AttributesEnum.Companyid.index();
     public static final int USERID = AttributesEnum.Userid.index();
     public static final int PASSWORD = AttributesEnum.Password.index();
@@ -91,12 +94,21 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
     public static final int USERTYPE = AttributesEnum.UserType.index();
     public static final int USERSEQ = AttributesEnum.Userseq.index();
     public static final int SYSUSERSDETAIL = AttributesEnum.SysUsersDetail.index();
+    public static final int SYSUSERCUSTOMER = AttributesEnum.SysUserCustomer.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SysUsersImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolams.erpsolamsmodel.erpsolamseo.SysUsers");
+    }
+
 
     /**
      * Gets the attribute value for Companyid, using the alias name Companyid.
@@ -490,19 +502,20 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getSysUserCustomer() {
+        return (RowIterator) getAttributeInternal(SYSUSERCUSTOMER);
+    }
+
+
+    /**
      * @param userseq key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(Integer userseq) {
         return new Key(new Object[] { userseq });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolams.erpsolamsmodel.erpsolamseo.SysUsers");
     }
 
     /**

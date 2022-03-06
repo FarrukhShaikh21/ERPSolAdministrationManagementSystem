@@ -52,4 +52,10 @@
     EntityAttrName="ModifiedDate"
     EntityUsage="SysUserCustomer"
     AliasName="MODIFIED_DATE"/>
+  <ViewLinkAccessor
+    Name="SysUsersView"
+    ViewLink="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

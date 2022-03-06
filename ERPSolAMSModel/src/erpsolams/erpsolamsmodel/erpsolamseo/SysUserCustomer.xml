@@ -78,6 +78,13 @@
     ColumnType="DATE"
     TableName="SYS_USER_CUSTOMER"
     PrimaryKey="true"/>
+  <AccessorAttribute
+    Name="SysUsers"
+    Association="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc"
+    AssociationEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc.SysUsers"
+    AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc.SysUserCustomer"
+    Type="erpsolams.erpsolamsmodel.erpsolamseo.SysUsersImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysusercustomerPrimaryKey"
     PrimaryKey="true">

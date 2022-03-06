@@ -261,4 +261,9 @@
     ViewLink="erpsolams.erpsolamsmodel.erpsolamsvo.SysC0016875Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SysUserCustomerView"
+    ViewLink="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

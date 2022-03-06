@@ -368,6 +368,13 @@
     AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamseo.SysC0016875Assoc.SysUsers"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SysUserCustomer"
+    Association="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc"
+    AssociationEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc.SysUserCustomer"
+    AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc.SysUsers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpksysUsers"
     PrimaryKey="true">
