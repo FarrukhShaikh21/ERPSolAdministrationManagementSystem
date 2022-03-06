@@ -44,5 +44,10 @@
             DataControl="ERPSolAMSAppModuleDataControl"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="ERPSolAMSAppModuleDataControl"/>
+    <attributeValues IterBinding="SysUsersCRUDIterator" id="Userid">
+      <AttrNames>
+        <Item Value="Userid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
