@@ -19,4 +19,13 @@
   <ViewUsage
     Name="SysProgramAutoSuggestRO"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysProgramView"/>
+  <ViewUsage
+    Name="SysUserCustomerDetCRUD"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUserCustomerView"/>
+  <ViewLinkUsage
+    Name="SysUsersSysUsersCustomerUserIDLink1"
+    ViewLinkObjectName="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"
+    SrcViewUsageName="erpsolams.erpsolamsmodel.erpsolamsam.ERPSolAMSAppModule.SysUsersCRUD"
+    DstViewUsageName="erpsolams.erpsolamsmodel.erpsolamsam.ERPSolAMSAppModule.SysUserCustomerDetCRUD"
+    Reversed="false"/>
 </AppModule>

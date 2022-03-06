@@ -102,6 +102,9 @@
         <fixed-outcome>ACT-ERPSOL-EXIT-FORM</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="SYS_007">
+      <page>/SYS_007.jsf</page>
+    </view>
     <control-flow-rule id="__2">
       <from-activity-id>doERPSolAMSSessionGlobals</from-activity-id>
       <control-flow-case id="__3">
@@ -161,6 +164,10 @@
       <control-flow-case id="__23">
         <from-outcome>ERP-ACT-SYS-004</from-outcome>
         <to-activity-id>SYS_004</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__30">
+        <from-outcome>ERP-ACT-SYS-007</from-outcome>
+        <to-activity-id>SYS_007</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__14">
