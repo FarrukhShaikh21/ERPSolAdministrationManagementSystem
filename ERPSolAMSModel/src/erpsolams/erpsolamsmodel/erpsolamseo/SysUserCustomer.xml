@@ -9,7 +9,13 @@
   DBObjectType="table"
   DBObjectName="SYS_USER_CUSTOMER"
   AliasName="SysUserCustomer"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomerImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="Userid"
     Precision="25"
@@ -43,8 +49,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USER_CUSTOMER"
-    PrimaryKey="true">
+    TableName="SYS_USER_CUSTOMER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -53,10 +58,9 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="SYS_USER_CUSTOMER"
-    PrimaryKey="true"/>
+    TableName="SYS_USER_CUSTOMER"/>
   <Attribute
     Name="Modifiedby"
     Precision="20"
@@ -64,8 +68,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USER_CUSTOMER"
-    PrimaryKey="true">
+    TableName="SYS_USER_CUSTOMER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -74,10 +77,30 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
+    TableName="SYS_USER_CUSTOMER"/>
+  <Attribute
+    Name="txtCustomerName"
+    Precision="80"
+    ColumnName="TXT_CUSTOMER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
     TableName="SYS_USER_CUSTOMER"
-    PrimaryKey="true"/>
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.txtCustomerName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="SysUsers"
     Association="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc"
@@ -101,10 +124,6 @@
     <AttrArray Name="Attributes">
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Userid"/>
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Customerid"/>
-      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Createdby"/>
-      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.CreatedDate"/>
-      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Modifiedby"/>
-      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.ModifiedDate"/>
     </AttrArray>
   </Key>
   <Key
@@ -118,4 +137,8 @@
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Customerid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolams.erpsolamsmodel.ERPSolAMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

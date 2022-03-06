@@ -23,6 +23,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolams.erpsolamsmodel.erpsolamseo.AllCustomers.Customerid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CustomerName"
@@ -35,6 +43,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolams.erpsolamsmodel.erpsolamseo.AllCustomers.CustomerName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Technicalpersonid"
@@ -1053,4 +1069,8 @@
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.AllCustomers.MktRegionid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolams.erpsolamsmodel.ERPSolAMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

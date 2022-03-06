@@ -13,6 +13,34 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllCustomersView"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllCustomersView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovCustomerid"
+    ListVOName="AccAllCustomersView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtCustomerName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Customerid"/>
+      <Item Value="CustomerName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Customerid"/>
+      <Item Value="CustomerName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SysUserCustomer"
     Entity="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer"/>
@@ -27,7 +55,15 @@
     PrecisionRule="true"
     EntityAttrName="Customerid"
     EntityUsage="SysUserCustomer"
-    AliasName="CUSTOMERID"/>
+    AliasName="CUSTOMERID"
+    LOVName="LovCustomerid">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Createdby"
     PrecisionRule="true"
@@ -52,6 +88,14 @@
     EntityAttrName="ModifiedDate"
     EntityUsage="SysUserCustomer"
     AliasName="MODIFIED_DATE"/>
+  <ViewAttribute
+    Name="txtCustomerName"
+    PrecisionRule="true"
+    EntityAttrName="txtCustomerName"
+    EntityUsage="SysUserCustomer"
+    AliasName="TXT_CUSTOMER_NAME"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewLinkAccessor
     Name="SysUsersView"
     ViewLink="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"
