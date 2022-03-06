@@ -22,6 +22,9 @@
   <ViewUsage
     Name="SysUserCustomerDetCRUD"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUserCustomerView"/>
+  <ViewUsage
+    Name="AllCustomersAutoSuggestRO"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllCustomersView"/>
   <ViewLinkUsage
     Name="SysUsersSysUsersCustomerUserIDLink1"
     ViewLinkObjectName="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"

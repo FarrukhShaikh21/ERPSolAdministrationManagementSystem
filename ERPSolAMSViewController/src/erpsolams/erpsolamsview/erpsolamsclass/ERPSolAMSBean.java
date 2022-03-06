@@ -174,7 +174,6 @@ public class ERPSolAMSBean {
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        AttributeBinding ERPLocid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
         System.out.println("b");
 //        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
@@ -182,7 +181,7 @@ public class ERPSolAMSBean {
         System.out.println("d");
 //        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllCustomersAutoSuggestRO",
-                                                            "LOCATIONID='"+ERPLocid+"' AND UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "CustomerName", "Customerid", 10,"ERPSolAMSAppModuleDataControl");
+                                                            " UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "CustomerName", "Customerid", 10,"ERPSolAMSAppModuleDataControl");
         return ResultList;
         
     }   

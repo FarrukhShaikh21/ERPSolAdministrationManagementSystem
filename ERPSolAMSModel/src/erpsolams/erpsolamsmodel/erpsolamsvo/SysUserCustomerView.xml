@@ -58,4 +58,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllCustomersView"
+    ViewLink="erpsolams.erpsolamsmodel.erpsolamslink.AllCustomerSysUserCustomerCustomerIDLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

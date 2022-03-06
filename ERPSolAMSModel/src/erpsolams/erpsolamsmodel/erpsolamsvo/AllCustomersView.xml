@@ -517,4 +517,9 @@
     EntityAttrName="Customerseq"
     EntityUsage="AllCustomers"
     AliasName="CUSTOMERSEQ"/>
+  <ViewLinkAccessor
+    Name="SysUserCustomerView"
+    ViewLink="erpsolams.erpsolamsmodel.erpsolamslink.AllCustomerSysUserCustomerCustomerIDLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -85,6 +85,13 @@
     AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc.SysUserCustomer"
     Type="erpsolams.erpsolamsmodel.erpsolamseo.SysUsersImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AllCustomers"
+    Association="erpsolams.erpsolamsmodel.erpsolamsassoc.AllCustomerSysUserCustomerCustomerIDAssoc"
+    AssociationEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.AllCustomerSysUserCustomerCustomerIDAssoc.AllCustomers"
+    AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.AllCustomerSysUserCustomerCustomerIDAssoc.SysUserCustomer"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysusercustomerPrimaryKey"
     PrimaryKey="true">
@@ -98,6 +105,17 @@
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.CreatedDate"/>
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Modifiedby"/>
       <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.ModifiedDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_SysUserCustomer">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKALL_CUSTOMERS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_SYS_USER_CUSTOMER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolams.erpsolamsmodel.erpsolamseo.SysUserCustomer.Customerid"/>
     </AttrArray>
   </Key>
 </Entity>
