@@ -39,7 +39,8 @@
       <Item Value="Customerid"/>
       <Item Value="CustomerName"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="AllCustomersViewFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="SysUserCustomer"
