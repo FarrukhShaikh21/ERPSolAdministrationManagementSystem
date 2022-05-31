@@ -61,7 +61,8 @@
       <Item Value="ModuleName"/>
       <Item Value="Moduleid"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Name="SysProgramViewFindVC"/>
   </ListBinding>
   <ListBinding
     Name="LovUserid"

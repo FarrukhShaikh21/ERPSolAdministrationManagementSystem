@@ -142,6 +142,55 @@
     EntityAttrName="AuditCheck"
     EntityUsage="SysProgram"
     AliasName="AUDIT_CHECK"/>
+  <ViewCriteria
+    Name="SysProgramViewFindVC"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysProgramView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="SysProgramViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Moduleid"
+        ViewAttribute="Moduleid"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ModuleName"
+        ViewAttribute="ModuleName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Projectid"
+        ViewAttribute="Projectid"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="SysUsersDetailView"
     ViewLink="erpsolams.erpsolamsmodel.erpsolamsvo.RSud370Link"
