@@ -44,7 +44,8 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
         UserType,
         Userseq,
         SysUsersDetail,
-        SysUserCustomer;
+        SysUserCustomer,
+        SysUserVoucherType;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -95,6 +96,7 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
     public static final int USERSEQ = AttributesEnum.Userseq.index();
     public static final int SYSUSERSDETAIL = AttributesEnum.SysUsersDetail.index();
     public static final int SYSUSERCUSTOMER = AttributesEnum.SysUserCustomer.index();
+    public static final int SYSUSERVOUCHERTYPE = AttributesEnum.SysUserVoucherType.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -506,6 +508,14 @@ public class SysUsersImpl extends ERPSolGlobalsEntityImpl {
      */
     public RowIterator getSysUserCustomer() {
         return (RowIterator) getAttributeInternal(SYSUSERCUSTOMER);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getSysUserVoucherType() {
+        return (RowIterator) getAttributeInternal(SYSUSERVOUCHERTYPE);
     }
 
 

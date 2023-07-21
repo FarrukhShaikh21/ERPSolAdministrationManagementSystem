@@ -375,6 +375,13 @@
     AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUsersSysUsersCustomerUserIDAssoc.SysUsers"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SysUserVoucherType"
+    Association="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUSersSysUserVoucherTypeUserIdAssoc"
+    AssociationEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUSersSysUserVoucherTypeUserIdAssoc.SysUserVoucherType"
+    AssociationOtherEnd="erpsolams.erpsolamsmodel.erpsolamsassoc.SysUSersSysUserVoucherTypeUserIdAssoc.SysUsers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpksysUsers"
     PrimaryKey="true">

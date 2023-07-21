@@ -25,10 +25,19 @@
   <ViewUsage
     Name="AllCustomersAutoSuggestRO"
     ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.AllCustomersView"/>
+  <ViewUsage
+    Name="SysUserVoucherTypeDetCRUD"
+    ViewObjectName="erpsolams.erpsolamsmodel.erpsolamsvo.SysUserVoucherTypeView"/>
   <ViewLinkUsage
     Name="SysUsersSysUsersCustomerUserIDLink1"
     ViewLinkObjectName="erpsolams.erpsolamsmodel.erpsolamslink.SysUsersSysUsersCustomerUserIDLink"
     SrcViewUsageName="erpsolams.erpsolamsmodel.erpsolamsam.ERPSolAMSAppModule.SysUsersCRUD"
     DstViewUsageName="erpsolams.erpsolamsmodel.erpsolamsam.ERPSolAMSAppModule.SysUserCustomerDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SysUSersSysUserVoucherTypeUserIdLink1"
+    ViewLinkObjectName="erpsolams.erpsolamsmodel.erpsolamslink.SysUSersSysUserVoucherTypeUserIdLink"
+    SrcViewUsageName="erpsolams.erpsolamsmodel.erpsolamsam.ERPSolAMSAppModule.SysUsersCRUD"
+    DstViewUsageName="erpsolams.erpsolamsmodel.erpsolamsam.ERPSolAMSAppModule.SysUserVoucherTypeDetCRUD"
     Reversed="false"/>
 </AppModule>
