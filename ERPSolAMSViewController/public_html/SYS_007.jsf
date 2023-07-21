@@ -183,6 +183,10 @@
                                                              showDisclosure="false">
                                                     <f:facet name="toolbar">
                                                         <af:toolbar id="t8">
+                                                            <af:button id="b8"
+                                                                       actionListener="#{bindings.Commit.execute}"
+                                                                       icon="#{resource['images:imgSave.png']}"
+                                                                       text="Save"/>
                                                             <af:button actionListener="#{bindings.CreateInsert1.execute}"
                                                                        text="Add"
                                                                        disabled="#{!bindings.CreateInsert1.enabled}"
