@@ -218,8 +218,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USERS"
-    DefaultValue="SB">
+    TableName="SYS_USERS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -232,7 +231,7 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     TableName="SYS_USERS"
-    DefaultValue="Y">
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -257,8 +256,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USERS"
-    DefaultValue="Y">
+    TableName="SYS_USERS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -270,8 +268,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USERS"
-    DefaultValue="123">
+    TableName="SYS_USERS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="17"/>
     </DesignTime>
@@ -295,8 +292,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USERS"
-    DefaultValue="001">
+    TableName="SYS_USERS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -344,8 +340,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="SYS_USERS"
-    DefaultValue="SOF">
+    TableName="SYS_USERS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
